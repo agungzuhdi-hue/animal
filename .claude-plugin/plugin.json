@@ -1,7 +1,7 @@
 {
   "name": "ascii-menagerie",
-  "version": "0.1.0",
-  "description": "An animated ASCII animal that keeps you company in a pane beside every Claude Code session",
+  "version": "0.2.0",
+  "description": "An animated ASCII animal that keeps you company above the prompt in every Claude Code session",
   "types": "./types/index.d.ts",
   "license": "MIT"
 }

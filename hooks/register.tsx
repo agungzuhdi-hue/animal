@@ -51,19 +51,12 @@ async function say($: EngineInterface, text: string, ms = 3000) {
   await update($, mood, () => ({ text, until: now + ms }))
 }
 
-let isPanePlaced = false
-
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
-    await $.command.register({ name: 'menagerie', description: 'Open the ASCII Menagerie pane' })
+    await $.command.register({ name: 'menagerie', description: 'Also show the ASCII Menagerie in a side pane' })
     $.clock.every(600, () => {
       void update($, frame, n => (n + 1) % 1000)
     })
-    void $.ui.open({ id: PANE, title: TITLE })
-      .then(r => {
-        isPanePlaced = r.isPlaced
-      })
-      .catch(() => undefined)
     return next(e)
   })
 
@@ -118,7 +111,7 @@ export const register: Register = on => {
   })
 
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
-    if (isPanePlaced || e.props.hasSurvey) return next(e)
+    if (e.props.hasSurvey) return next(e)
     const { Box, Text, Button } = $.ui.resolve(e)
     const i = await read($, animal)
     const n = await read($, frame)
@@ -128,21 +121,23 @@ export const register: Register = on => {
     const line = m && m.until > Date.now() ? m.text : ''
 
     return (
-      <Box flexDirection="column" gap={1}>
-        <Text weight="bold">{a.name}</Text>
+      <Box flexDirection="row" gap={2} alignItems="center">
         <Box flexDirection="column">
           {art.split('\n').map(l => (
             <Text mono>{l}</Text>
           ))}
         </Box>
-        <Text dimColor>{line ? `"${line}"` : ' '}</Text>
-        <Box flexDirection="row" gap={1}>
-          <Button key="pet" label="Pet" onPress={() => say($, `${pick(a.says)} ♥`)} />
-          <Button
-            key="next"
-            label="Next animal"
-            onPress={() => update($, animal, v => (v + 1) % ANIMALS.length)}
-          />
+        <Box flexDirection="column" gap={1}>
+          <Text weight="bold">{a.name}</Text>
+          <Text dimColor>{line ? `"${line}"` : ' '}</Text>
+          <Box flexDirection="row" gap={1}>
+            <Button key="band-pet" label="Pet" onPress={() => say($, `${pick(a.says)} ♥`)} />
+            <Button
+              key="band-next"
+              label="Next animal"
+              onPress={() => update($, animal, v => (v + 1) % ANIMALS.length)}
+            />
+          </Box>
         </Box>
       </Box>
     )
