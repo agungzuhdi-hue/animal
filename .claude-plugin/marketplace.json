@@ -1,0 +1,12 @@
+{
+  "name": "ascii-menagerie",
+  "owner": {
+    "name": "agungzuhdi-hue"
+  },
+  "plugins": [
+    {
+      "name": "ascii-menagerie",
+      "source": "./"
+    }
+  ]
+}
