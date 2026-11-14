@@ -1,7 +1,7 @@
 # ASCII Menagerie
 
 A small Claude Code mod that keeps an animated ASCII animal just above the prompt box of your session.
-Six animals take turns (cat, bunny, owl, fish, penguin, snail). Press **Pet** to make the
+Twelve animals take turns (cat, bunny, owl, fish, penguin, snail, dog, frog, turtle, mouse, bear, bat). Press **Pet** to make the
 animal talk, or **Next animal** to switch. The animal also reacts while Claude works: it
 notices a new prompt, watches each tool call, and cheers when the turn finishes.
 
