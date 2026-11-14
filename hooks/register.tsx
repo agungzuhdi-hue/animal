@@ -18,61 +18,73 @@ type Animal = {
 
 const ANIMALS: Animal[] = [
   { name: 'Cat', food: "a fish", color: '#F4A340', accent: '#7BD88F', accentChars: 'o-^', says: ['mrrp', 'purr...', 'feed me'], frames: [
-    '  /\\_/\\  \n ( o.o ) \n  > ^ <  \n /     \\ \n(|     |)~',
-    '  /\\_/\\  \n ( -.- ) \n  > ^ <  \n /     \\ \n(|     |) ~',
-    '  /\\_/\\  \n ( o.o ) \n  > ^ <  \n /     \\ \n(|     |)~~',
+    "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~",
+    "  /\\_/\\\n ( -.- )\n  > ^ <\n /|   |\\\n(_|   |_) ~",
+    "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~~",
   ] },
   { name: 'Bunny', food: "a carrot", color: '#F7A8C8', accent: '#FF6B9A', accentChars: 'o-"', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
-    ' (\\(\\   \n ( -.-) \n o_(")(")',
-    ' (\\(\\   \n ( o.o) \n o_(")(")',
-    ' (\\ /)  \n ( o.o) \n o_(")(")',
+    "   (\\ /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
+    "   (\\ /)\n   (-.-)\n  (  ^  )\n  (\")_(\")",
+    "   (| /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
   ] },
   { name: 'Owl', food: "a berry", color: '#C9A06B', accent: '#FFD166', accentChars: 'O-,', says: ['hoo?', 'whooo', 'night shift'], frames: [
-    '  ,_,  \n (O,O) \n (   ) \n -"-"- ',
-    '  ,_,  \n (-,O) \n (   ) \n -"-"- ',
-    '  ,_,  \n (O,O) \n /)  )\\\n -"-"- ',
+    "  ,___,\n  (O,O)\n  /)__)\n --\"-\"--",
+    "  ,___,\n  (-,O)\n  /)__)\n --\"-\"--",
+    "  ,___,\n  (O,O)\n \\(___)/\n --\"-\"--",
   ] },
   { name: 'Fish', food: "some flakes", color: '#FF9F1C', accent: '#5BC0EB', accentChars: 'o', says: ['blub', 'blub blub', 'o  o'], frames: [
-    '      o  \n   o     \n ><(((º> ',
-    '    o    \n  o      \n  ><(((º>',
-    '   o     \n       o \n ><(((º> ',
+    "      o\n    o\n  ><(((o>\n ~~~~~~~~~~",
+    "     o\n   o\n   ><(((o>\n ~~~~~~~~~~",
+    "    o\n      o\n  ><(((o>\n ~~~~~~~~~~",
   ] },
   { name: 'Penguin', food: "a sardine", color: '#9CC3E6', accent: '#F7C948', accentChars: 'V^', says: ['noot', 'brr', 'waddle'], frames: [
-    '   _~_   \n  (o o)  \n /  V  \\ \n/(  _  )\\\n  ^^ ^^  ',
-    '   _~_   \n  (o o)  \n /  V  \\ \n (  _  )\\\n  ^^ ^^  ',
-    '   _~_   \n  (o o)  \n /  V  \\ \n/(  _  ) \n  ^^ ^^  ',
+    "   _~_\n  (o o)\n /  V  \\\n/(  _  )\\\n  ^^ ^^",
+    "   _~_\n  (o o)\n /  V  \\\n (  _  )\\\n  ^^ ^^",
+    "   _~_\n  (- -)\n /  V  \\\n/(  _  )\n  ^^ ^^",
   ] },
   { name: 'Snail', food: "a lettuce leaf", color: '#7BC67E', accent: '#C792EA', accentChars: '@()', says: ['...slowly', 'no rush', '@'], frames: [
-    '    _____      \n   /     \\  @ @\n  | (@)   |_/ /\n   \\_____/___/ ',
-    '    _____      \n   /     \\ @ @ \n  | (@)   |/ /  \n   \\_____/__/   ',
+    "    _____\n   /     \\  @ @\n  | (@)   |_/ /\n   \\_____/___/",
+    "    _____\n   /     \\ @ @\n  | (@)   |/ /\n   \\_____/__/",
   ] },
-  { name: "Dog", food: "a bone", color: "#D9A066", accent: "#FF6B6B", accentChars: "o'", says: ["woof!", "ball?", "best day"], frames: [
-    "   __           \n o-''|\\_____/)  \n  \\_/|_)     )  \n     \\  __  /   \n     (_/ (_/    ",
-    "   __           \n o-''|\\_____/)  \n  \\_/|_)     )  \n     \\  __  /\\  \n     (_/ (_/    ",
+  { name: "Dog", food: "a bone", color: "#D9A066", accent: "#FF6B6B", accentChars: "@OU", says: ["woof!", "ball?", "best day"], frames: [
+    "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/   U",
+    "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/",
   ] },
   { name: "Frog", food: "a fly", color: "#6BCB77", accent: "#FFD93D", accentChars: "@", says: ["ribbit", "croak", "*catches fly*"], frames: [
-    "  @..@  \n (----) \n( >__< )\n^^ ~~ ^^",
-    "  -..@  \n (----) \n( >__< )\n^^ ~~ ^^",
-    "  @..@  \n (----) \n( >__< )\n ^^  ^^ ",
+    "  @..@\n (----)\n( >__< )\n^^ ~~ ^^",
+    "  -..@\n (----)\n( >__< )\n^^ ~~ ^^",
+    "  @..@\n (----)\n( >__< )\n ^^  ^^",
   ] },
   { name: "Turtle", food: "a strawberry", color: "#4CAF8F", accent: "#F4D35E", accentChars: "o", says: ["slow and steady", "*hides*", "hello"], frames: [
-    "   _____     ____ \n  /      \\  |  o |\n |        |/ ___\\|\n |_________/      \n |_|_| |_|_|      ",
-    "   _____     ____ \n  /      \\  |  o |\n |        |/ ___\\|\n |_________/      \n  |_|_| |_|_|     ",
+    "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n   UU    UU",
+    "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n    UU    UU",
   ] },
   { name: "Mouse", food: "some cheese", color: "#B8B8C8", accent: "#FF8FAB", accentChars: "o~", says: ["squeak", "cheese?", "*twitch*"], frames: [
-    "  (\\_/)    \n  (o.o)    \n o( _ )~~  \n   \" \"     ",
-    "  (\\_/)    \n  (-.-)    \n o( _ ) ~~ \n   \" \"     ",
-    "  (\\_/)    \n  (o.o)    \n o( _ )~ ~ \n   \" \"     ",
+    "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~~~\n   \" \"",
+    "  _   _\n (_)-(_)\n  (-.-)\n  (=-=) ~~\n   \" \"",
+    "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~ ~\n   \" \"",
   ] },
-  { name: "Bear", food: "a pot of honey", color: "#C08A5B", accent: "#FFCF99", accentChars: "o-", says: ["grr (friendly)", "honey?", "*big hug*"], frames: [
-    " .--.  .--. \n/    \\/    \\\n| .-.  .-. |\n|  o    o  |\n \\   __   / \n  '-.__.-'  ",
-    " .--.  .--. \n/    \\/    \\\n| .-.  .-. |\n|  -    -  |\n \\   __   / \n  '-.__.-'  ",
+  { name: "Bear", food: "a pot of honey", color: "#C08A5B", accent: "#FFCF99", accentChars: "o", says: ["grr (friendly)", "honey?", "*big hug*"], frames: [
+    "  (()__(()\n  /  o  o \\\n (    __   )\n  \\  (__) /\n   '-....-'",
+    "  (()__(()\n  /  -  - \\\n (    __   )\n  \\  (__) /\n   '-....-'",
   ] },
   { name: "Bat", food: "a mango", color: "#A78BFA", accent: "#FFD166", accentChars: "o.", says: ["eek", "squeak", "upside down"], frames: [
-    " /\\                 /\\ \n/ \\'._   (\\_/)   _.'/ \\\n|.''._'--(o.o)--'_.''.|\n \\_ / `;=/ \" \\=;` \\ _/ \n   \\__|  \\___/  |__/   ",
-    "                       \n  _.-._  (\\_/)  _.-._  \n '_    '-(o.o)-'    _' \n   '-.  /\" \" \\  .-'    \n      '-\\___/-'        ",
+    "   /\\       /\\\n  /  \\(\\_/)/  \\\n / /\\ (o.o) /\\ \\\n/_/  \\/ \" \\/  \\_\\",
+    "\n  __  (\\_/)  __\n /  \\_(o.o)_/  \\\n \\_/  / \" \\  \\_/",
   ] },
 ]
+
+// Every frame of every animal gets the same height, and each animal's frames
+// the same width, so nothing jumps while it animates or when you switch.
+const HEIGHT = 5
+for (const a of ANIMALS) {
+  const split = a.frames.map(f => f.split('\n'))
+  const width = Math.max(...split.flat().map(l => l.length))
+  a.frames = split.map(lines => {
+    const pad: string[] = Array(Math.max(0, HEIGHT - lines.length)).fill('')
+    return [...pad, ...lines].map(l => l.padEnd(width)).join('\n')
+  })
+}
 
 const frame = atom({ plugin: 'ascii-menagerie', key: 'frame' } as const, 0)
 const animal = atom({ plugin: 'ascii-menagerie', key: 'animal' } as const, 0)
