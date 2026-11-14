@@ -6,35 +6,42 @@ import type { Mood } from '../types'
 const PANE = 'ascii-menagerie'
 const TITLE = 'ASCII Menagerie'
 
-type Animal = { name: string; says: string[]; frames: string[] }
+type Animal = {
+  name: string
+  says: string[]
+  color: string
+  accent: string
+  accentChars: string
+  frames: string[]
+}
 
 const ANIMALS: Animal[] = [
-  { name: 'Cat', says: ['mrrp', 'purr...', 'feed me'], frames: [
+  { name: 'Cat', color: '#F4A340', accent: '#7BD88F', accentChars: 'o-^', says: ['mrrp', 'purr...', 'feed me'], frames: [
     '  /\\_/\\  \n ( o.o ) \n  > ^ <  \n /     \\ \n(|     |)~',
     '  /\\_/\\  \n ( -.- ) \n  > ^ <  \n /     \\ \n(|     |) ~',
     '  /\\_/\\  \n ( o.o ) \n  > ^ <  \n /     \\ \n(|     |)~~',
   ] },
-  { name: 'Bunny', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
+  { name: 'Bunny', color: '#F7A8C8', accent: '#FF6B9A', accentChars: 'o-"', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
     ' (\\(\\   \n ( -.-) \n o_(")(")',
     ' (\\(\\   \n ( o.o) \n o_(")(")',
     ' (\\ /)  \n ( o.o) \n o_(")(")',
   ] },
-  { name: 'Owl', says: ['hoo?', 'whooo', 'night shift'], frames: [
+  { name: 'Owl', color: '#C9A06B', accent: '#FFD166', accentChars: 'O-,', says: ['hoo?', 'whooo', 'night shift'], frames: [
     '  ,_,  \n (O,O) \n (   ) \n -"-"- ',
     '  ,_,  \n (-,O) \n (   ) \n -"-"- ',
     '  ,_,  \n (O,O) \n /)  )\\\n -"-"- ',
   ] },
-  { name: 'Fish', says: ['blub', 'blub blub', 'o  o'], frames: [
+  { name: 'Fish', color: '#FF9F1C', accent: '#5BC0EB', accentChars: 'o', says: ['blub', 'blub blub', 'o  o'], frames: [
     '      o  \n   o     \n ><(((º> ',
     '    o    \n  o      \n  ><(((º>',
     '   o     \n       o \n ><(((º> ',
   ] },
-  { name: 'Penguin', says: ['noot', 'brr', 'waddle'], frames: [
+  { name: 'Penguin', color: '#9CC3E6', accent: '#F7C948', accentChars: 'V^', says: ['noot', 'brr', 'waddle'], frames: [
     '   _~_   \n  (o o)  \n /  V  \\ \n/(  _  )\\\n  ^^ ^^  ',
     '   _~_   \n  (o o)  \n /  V  \\ \n (  _  )\\\n  ^^ ^^  ',
     '   _~_   \n  (o o)  \n /  V  \\ \n/(  _  ) \n  ^^ ^^  ',
   ] },
-  { name: 'Snail', says: ['...slowly', 'no rush', '@'], frames: [
+  { name: 'Snail', color: '#7BC67E', accent: '#C792EA', accentChars: '@()', says: ['...slowly', 'no rush', '@'], frames: [
     '    _____      \n   /     \\  @ @\n  | (@)   |_/ /\n   \\_____/___/ ',
     '    _____      \n   /     \\ @ @ \n  | (@)   |/ /  \n   \\_____/__/   ',
   ] },
@@ -43,6 +50,20 @@ const ANIMALS: Animal[] = [
 const frame = atom({ plugin: 'ascii-menagerie', key: 'frame' } as const, 0)
 const animal = atom({ plugin: 'ascii-menagerie', key: 'animal' } as const, 0)
 const mood = atom({ plugin: 'ascii-menagerie', key: 'mood' } as const, null as Mood | null)
+
+const HEART = '#FF6B9A'
+
+// Splits a line into runs so the eyes, beak or bubbles get the accent color.
+function runs(line: string, a: Animal): { text: string; isAccent: boolean }[] {
+  const out: { text: string; isAccent: boolean }[] = []
+  for (const ch of line) {
+    const isAccent = a.accentChars.includes(ch)
+    const last = out[out.length - 1]
+    if (last && last.isAccent === isAccent) last.text += ch
+    else out.push({ text: ch, isAccent })
+  }
+  return out
+}
 
 const pick = (list: string[]) => list[Math.floor(Math.random() * list.length)] ?? ''
 
@@ -91,13 +112,15 @@ export const register: Register = on => {
 
     return (
       <Box flexDirection="column" gap={1}>
-        <Text weight="bold">{a.name}</Text>
+        <Text weight="bold" color={a.color}>{a.name}</Text>
         <Box flexDirection="column">
           {art.split('\n').map(l => (
-            <Text mono>{l}</Text>
+            <Text mono color={a.color}>
+              {runs(l, a).map(r => (r.isAccent ? <Text color={a.accent}>{r.text}</Text> : r.text))}
+            </Text>
           ))}
         </Box>
-        <Text dimColor>{line ? `"${line}"` : ' '}</Text>
+        <Text color={line.includes('♥') ? HEART : a.accent}>{line ? `"${line}"` : ' '}</Text>
         <Box flexDirection="row" gap={1}>
           <Button key="pet" label="Pet" onPress={() => say($, `${pick(a.says)} ♥`)} />
           <Button
@@ -124,12 +147,14 @@ export const register: Register = on => {
       <Box flexDirection="row" gap={2} alignItems="center">
         <Box flexDirection="column">
           {art.split('\n').map(l => (
-            <Text mono>{l}</Text>
+            <Text mono color={a.color}>
+              {runs(l, a).map(r => (r.isAccent ? <Text color={a.accent}>{r.text}</Text> : r.text))}
+            </Text>
           ))}
         </Box>
         <Box flexDirection="column" gap={1}>
-          <Text weight="bold">{a.name}</Text>
-          <Text dimColor>{line ? `"${line}"` : ' '}</Text>
+          <Text weight="bold" color={a.color}>{a.name}</Text>
+          <Text color={line.includes('♥') ? HEART : a.accent}>{line ? `"${line}"` : ' '}</Text>
           <Box flexDirection="row" gap={1}>
             <Button key="band-pet" label="Pet" onPress={() => say($, `${pick(a.says)} ♥`)} />
             <Button
