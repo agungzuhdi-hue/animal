@@ -10,6 +10,7 @@ declare module 'claude-code' {
       act: Act | null
       love: number
       isAsleep: boolean
+      isBricks: boolean
     }
   }
 }

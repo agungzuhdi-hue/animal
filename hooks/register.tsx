@@ -14,6 +14,7 @@ type Animal = {
   accent: string
   accentChars: string
   frames: string[]
+  bricks: string[]
 }
 
 const ANIMALS: Animal[] = [
@@ -21,70 +22,113 @@ const ANIMALS: Animal[] = [
     "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~",
     "  /\\_/\\\n ( -.- )\n  > ^ <\n /|   |\\\n(_|   |_) ~",
     "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~~",
+  ], bricks: [
+    " ▄ ▄  ▄ ▄\n ██▄▄▄▄██\n █●████●█\n ███▀▀███ █\n  ██████▄█\n  ██  ██",
+    " ▄ ▄  ▄ ▄\n ██▄▄▄▄██\n █▬████▬█\n ███▀▀███\n  ██████▄▄█\n  ██  ██",
   ] },
   { name: 'Bunny', food: "a carrot", color: '#F7A8C8', accent: '#FF6B9A', accentChars: 'o-"', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
     "   (\\ /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
     "   (\\ /)\n   (-.-)\n  (  ^  )\n  (\")_(\")",
     "   (| /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
+  ], bricks: [
+    "  █▌ ▐█\n  █▌ ▐█\n ▄█████▄\n █●███●█\n ██▄▀▄██\n  ██ ██",
+    "  █▌ ▐█\n  █▌ ▐█\n ▄█████▄\n █▬███▬█\n ██▄▀▄██\n  ██ ██",
+    " ▀█▌ ▐█\n   ▌ ▐█\n ▄█████▄\n █●███●█\n ██▄▀▄██\n  ██ ██",
   ] },
   { name: 'Owl', food: "a berry", color: '#C9A06B', accent: '#FFD166', accentChars: 'O-,', says: ['hoo?', 'whooo', 'night shift'], frames: [
     "  ,___,\n  (O,O)\n  /)__)\n --\"-\"--",
     "  ,___,\n  (-,O)\n  /)__)\n --\"-\"--",
     "  ,___,\n  (O,O)\n \\(___)/\n --\"-\"--",
+  ], bricks: [
+    " █▄▄▄▄▄█\n █●███●█\n ██▄▀▄██\n ███████\n  ▀▀ ▀▀",
+    " █▄▄▄▄▄█\n █▬███●█\n ██▄▀▄██\n ███████\n  ▀▀ ▀▀",
+    " █▄▄▄▄▄█\n █●███●█\n▄██▄▀▄██▄\n▀███████▀\n  ▀▀ ▀▀",
   ] },
   { name: 'Fish', food: "some flakes", color: '#FF9F1C', accent: '#5BC0EB', accentChars: 'o', says: ['blub', 'blub blub', 'o  o'], frames: [
     "      o\n    o\n  ><(((o>\n ~~~~~~~~~~",
     "     o\n   o\n   ><(((o>\n ~~~~~~~~~~",
     "    o\n      o\n  ><(((o>\n ~~~~~~~~~~",
+  ], bricks: [
+    "      ●\n   ▄ ▄ ▄\n▄  █████▄\n███████●██\n▀  █████▀\n   ▀ ▀ ▀",
+    "     ●\n   ▄ ▄ ▄\n   █████▄\n▐██████●██\n   █████▀\n   ▀ ▀ ▀",
   ] },
   { name: 'Penguin', food: "a sardine", color: '#9CC3E6', accent: '#F7C948', accentChars: 'V^', says: ['noot', 'brr', 'waddle'], frames: [
     "   _~_\n  (o o)\n /  V  \\\n/(  _  )\\\n  ^^ ^^",
     "   _~_\n  (o o)\n /  V  \\\n (  _  )\\\n  ^^ ^^",
     "   _~_\n  (- -)\n /  V  \\\n/(  _  )\n  ^^ ^^",
+  ], bricks: [
+    "  ▄ ▄ ▄\n ███████\n █●███●█\n ██▄█▄██\n▐█▀   ▀█▌\n █▄▄▄▄▄█\n  ▀▀ ▀▀",
+    "  ▄ ▄ ▄\n ███████\n █▬███▬█\n ██▄█▄██\n █▀   ▀█▌\n █▄▄▄▄▄█\n  ▀▀ ▀▀",
   ] },
   { name: 'Snail', food: "a lettuce leaf", color: '#7BC67E', accent: '#C792EA', accentChars: '@()', says: ['...slowly', 'no rush', '@'], frames: [
     "    _____\n   /     \\  @ @\n  | (@)   |_/ /\n   \\_____/___/",
     "    _____\n   /     \\ @ @\n  | (@)   |/ /\n   \\_____/__/",
+  ], bricks: [
+    "  ▄ ▄ ▄\n ███████   ● ●\n ██▀▀▀██   █ █\n ██ ● ██ ▄▄███\n ██████████▀▀",
+    "  ▄ ▄ ▄\n ███████  ● ●\n ██▀▀▀██  █ █\n ██ ● ██▄▄███\n ██████████▀",
   ] },
   { name: "Dog", food: "a bone", color: "#D9A066", accent: "#FF6B6B", accentChars: "@OU", says: ["woof!", "ball?", "best day"], frames: [
     "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/   U",
     "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/",
+  ], bricks: [
+    "  ▄ ▄ ▄\n █▀████▄▄\n █ ██●████●\n ▀▀███████▀\n   ███████ ▄\n   ██████▀▀\n   ██  ██",
+    "  ▄ ▄ ▄\n █▀████▄▄\n █ ██●████●\n ▀▀███████▀\n   ███████\n   ████████\n   ██  ██",
   ] },
   { name: "Frog", food: "a fly", color: "#6BCB77", accent: "#FFD93D", accentChars: "@", says: ["ribbit", "croak", "*catches fly*"], frames: [
     "  @..@\n (----)\n( >__< )\n^^ ~~ ^^",
     "  -..@\n (----)\n( >__< )\n^^ ~~ ^^",
     "  @..@\n (----)\n( >__< )\n ^^  ^^",
+  ], bricks: [
+    " ▄█▄   ▄█▄\n █●█▄▄▄█●█\n █████████\n ██▄▄▄▄▄██\n▄█▀     ▀█▄",
+    " ▄█▄   ▄█▄\n █▬█▄▄▄█●█\n █████████\n ██▄▄▄▄▄██\n▄█▀     ▀█▄",
+    " ▄█▄   ▄█▄\n █●█▄▄▄█●█\n █████████\n ██▄▄▄▄▄██\n ▀█     █▀",
   ] },
   { name: "Turtle", food: "a strawberry", color: "#4CAF8F", accent: "#F4D35E", accentChars: "o", says: ["slow and steady", "*hides*", "hello"], frames: [
     "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n   UU    UU",
     "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n    UU    UU",
+  ], bricks: [
+    "   ▄ ▄ ▄ ▄\n  █████████ ▄██▄\n ███████████ █●█\n ▀█████████▀▀██▀\n   ██    ██",
+    "   ▄ ▄ ▄ ▄\n  █████████ ▄██▄\n ███████████ █●█\n ▀█████████▀▀██▀\n    ██    ██",
   ] },
   { name: "Mouse", food: "some cheese", color: "#B8B8C8", accent: "#FF8FAB", accentChars: "o~", says: ["squeak", "cheese?", "*twitch*"], frames: [
     "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~~~\n   \" \"",
     "  _   _\n (_)-(_)\n  (-.-)\n  (=-=) ~~\n   \" \"",
     "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~ ~\n   \" \"",
+  ], bricks: [
+    "▄██▄   ▄██▄\n████▄▄▄████\n ▀█●███●█▀\n   ██▄██\n   ▀███▀▄▄▄▀",
+    "▄██▄   ▄██▄\n████▄▄▄████\n ▀█▬███▬█▀\n   ██▄██\n   ▀███▀▀▄▄▄",
   ] },
   { name: "Bear", food: "a pot of honey", color: "#C08A5B", accent: "#FFCF99", accentChars: "o", says: ["grr (friendly)", "honey?", "*big hug*"], frames: [
     "  (()__(()\n  /  o  o \\\n (    __   )\n  \\  (__) /\n   '-....-'",
     "  (()__(()\n  /  -  - \\\n (    __   )\n  \\  (__) /\n   '-....-'",
+  ], bricks: [
+    "▄█▄ ▄ ▄ ▄█▄\n▀█████████▀\n ██●███●██\n ███▄█▄███\n ██▀▀▀▀▀██\n  ▀█████▀",
+    "▄█▄ ▄ ▄ ▄█▄\n▀█████████▀\n ██▬███▬██\n ███▄█▄███\n ██▀▀▀▀▀██\n  ▀█████▀",
   ] },
   { name: "Bat", food: "a mango", color: "#A78BFA", accent: "#FFD166", accentChars: "o.", says: ["eek", "squeak", "upside down"], frames: [
     "   /\\       /\\\n  /  \\(\\_/)/  \\\n / /\\ (o.o) /\\ \\\n/_/  \\/ \" \\/  \\_\\",
     "\n  __  (\\_/)  __\n /  \\_(o.o)_/  \\\n \\_/  / \" \\  \\_/",
+  ], bricks: [
+    "█▄    ▄ ▄    ▄█\n██▄  █████  ▄██\n████▄█●█●█▄████\n▀█▀ ▀█████▀ ▀█▀\n      ▀ ▀",
+    "      ▄ ▄\n     █████\n▄▄▄▄▄█●█●█▄▄▄▄▄\n▀████▀███▀████▀\n ▀  ▀ ▀ ▀ ▀  ▀",
   ] },
 ]
 
-// Every frame of every animal gets the same height, and each animal's frames
-// the same width, so nothing jumps while it animates or when you switch.
-const HEIGHT = 5
-for (const a of ANIMALS) {
-  const split = a.frames.map(f => f.split('\n'))
-  const width = Math.max(...split.flat().map(l => l.length))
-  a.frames = split.map(lines => {
-    const pad: string[] = Array(Math.max(0, HEIGHT - lines.length)).fill('')
-    return [...pad, ...lines].map(l => l.padEnd(width)).join('\n')
+// Every frame gets the same height, and each animal's frames the same width,
+// so nothing jumps while it animates or when you switch animals.
+function even(sets: string[][]): string[][] {
+  const height = Math.max(...sets.flat().map(f => f.split('\n').length))
+  return sets.map(frames => {
+    const split = frames.map(f => f.split('\n'))
+    const width = Math.max(...split.flat().map(l => l.length))
+    return split.map(lines => {
+      const pad: string[] = Array(Math.max(0, height - lines.length)).fill('')
+      return [...pad, ...lines].map(l => l.padEnd(width)).join('\n')
+    })
   })
 }
+even(ANIMALS.map(a => a.frames)).forEach((f, i) => (ANIMALS[i]!.frames = f))
+even(ANIMALS.map(a => a.bricks)).forEach((f, i) => (ANIMALS[i]!.bricks = f))
 
 const frame = atom({ plugin: 'ascii-menagerie', key: 'frame' } as const, 0)
 const animal = atom({ plugin: 'ascii-menagerie', key: 'animal' } as const, 0)
@@ -92,16 +136,18 @@ const mood = atom({ plugin: 'ascii-menagerie', key: 'mood' } as const, null as M
 const act = atom({ plugin: 'ascii-menagerie', key: 'act' } as const, null as Act | null)
 const love = atom({ plugin: 'ascii-menagerie', key: 'love' } as const, 3)
 const isAsleep = atom({ plugin: 'ascii-menagerie', key: 'isAsleep' } as const, false)
+const isBricks = atom({ plugin: 'ascii-menagerie', key: 'isBricks' } as const, true)
 
 const HEART = '#FF6B9A'
 const MAX_LOVE = 5
 const EYES = 'oO@'
+const BRICK_EYES = '●▬'
 
 // Splits a line into runs so the eyes, beak or bubbles get the accent color.
-function runs(line: string, a: Animal): { text: string; isAccent: boolean }[] {
+function runs(line: string, accentChars: string): { text: string; isAccent: boolean }[] {
   const out: { text: string; isAccent: boolean }[] = []
   for (const ch of line) {
-    const isAccent = a.accentChars.includes(ch)
+    const isAccent = accentChars.includes(ch)
     const last = out[out.length - 1]
     if (last && last.isAccent === isAccent) last.text += ch
     else out.push({ text: ch, isAccent })
@@ -145,6 +191,12 @@ async function toggleSleep($: EngineInterface) {
   await say($, asleep ? '*yawn* good morning!' : 'good night...', 3000)
 }
 
+async function toggleLook($: EngineInterface) {
+  const bricks = await read($, isBricks)
+  await update($, isBricks, () => !bricks)
+  await say($, bricks ? 'back to classic!' : 'built from bricks!', 2500)
+}
+
 async function nextAnimal($: EngineInterface, isRandom: boolean) {
   await update($, act, () => null)
   await update($, isAsleep, () => false)
@@ -173,6 +225,8 @@ type View = {
   line: string
   love: number
   asleep: boolean
+  bricks: boolean
+  accentChars: string
 }
 
 async function view($: EngineInterface): Promise<View> {
@@ -184,8 +238,11 @@ async function view($: EngineInterface): Promise<View> {
   const now = Date.now()
   const a = ANIMALS[i % ANIMALS.length] ?? ANIMALS[0]!
   const kind = asleep ? 'sleep' : ac && ac.until > now ? ac.kind : null
-  let art = asleep ? (a.frames[0] ?? '') : (a.frames[n % a.frames.length] ?? '')
-  if (asleep) art = [...art].map(ch => (EYES.includes(ch) ? '-' : ch)).join('')
+  const bricks = await read($, isBricks)
+  const set = bricks ? a.bricks : a.frames
+  let art = asleep ? (set[0] ?? '') : (set[n % set.length] ?? '')
+  if (asleep && bricks) art = art.replaceAll('●', '▬')
+  if (asleep && !bricks) art = [...art].map(ch => (EYES.includes(ch) ? '-' : ch)).join('')
   let lines = art.split('\n')
   if (kind === 'play') lines = lines.map(l => (n % 2 ? '  ' + l : l + '  '))
   return {
@@ -196,6 +253,8 @@ async function view($: EngineInterface): Promise<View> {
     line: m && m.until > now ? m.text : asleep ? 'zzz...' : '',
     love: await read($, love),
     asleep,
+    bricks,
+    accentChars: bricks ? BRICK_EYES : a.accentChars,
   }
 }
 
@@ -253,7 +312,7 @@ export const register: Register = on => {
           <Text mono color={v.topColor}>{v.top}</Text>
           {v.lines.map(l => (
             <Text mono color={v.a.color}>
-              {runs(l, v.a).map(r => (r.isAccent ? <Text color={v.a.accent}>{r.text}</Text> : r.text))}
+              {runs(l, v.accentChars).map(r => (r.isAccent ? <Text color={v.a.accent}>{r.text}</Text> : r.text))}
             </Text>
           ))}
         </Box>
@@ -267,6 +326,7 @@ export const register: Register = on => {
         <Box flexDirection="row" gap={1} flexWrap="wrap">
           <Button key="pane-next" label="Next animal" onPress={() => nextAnimal($, false)} />
           <Button key="pane-random" label="Surprise me" onPress={() => nextAnimal($, true)} />
+          <Button key="pane-look" label={v.bricks ? 'Classic look' : 'Brick look'} onPress={() => toggleLook($)} />
         </Box>
       </Box>
     )
@@ -284,7 +344,7 @@ export const register: Register = on => {
           <Text mono color={v.topColor}>{v.top}</Text>
           {v.lines.map(l => (
             <Text mono color={v.a.color}>
-              {runs(l, v.a).map(r => (r.isAccent ? <Text color={v.a.accent}>{r.text}</Text> : r.text))}
+              {runs(l, v.accentChars).map(r => (r.isAccent ? <Text color={v.a.accent}>{r.text}</Text> : r.text))}
             </Text>
           ))}
         </Box>
@@ -301,6 +361,7 @@ export const register: Register = on => {
             <Button key="band-sleep" label={v.asleep ? 'Wake up' : 'Sleep'} onPress={() => toggleSleep($)} />
             <Button key="band-next" label="Next" onPress={() => nextAnimal($, false)} />
             <Button key="band-random" label="Surprise me" onPress={() => nextAnimal($, true)} />
+            <Button key="band-look" label={v.bricks ? 'Classic look' : 'Brick look'} onPress={() => toggleLook($)} />
           </Box>
         </Box>
       </Box>

@@ -10,6 +10,7 @@ What you can do with the animal:
 - **Play**: it hops from side to side.
 - **Sleep / Wake up**: it closes its eyes and snores until you wake it.
 - **Next** and **Surprise me**: switch to the next animal or a random one.
+- **Brick look / Classic look**: switch between animals built from toy bricks (the default) and classic keyboard-character art.
 
 A love meter (five hearts) fills when you pet, feed or play, and slowly empties if you leave the
 animal alone. The animal also reacts while Claude works: it notices a new prompt, watches each
