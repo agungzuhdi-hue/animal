@@ -15,10 +15,11 @@ type Animal = {
   accentChars: string
   frames: string[]
   bricks: string[]
+  face: string
 }
 
 const ANIMALS: Animal[] = [
-  { name: 'Cat', food: "a fish", color: '#F4A340', accent: '#7BD88F', accentChars: 'o-^', says: ['mrrp', 'purr...', 'feed me'], frames: [
+  { name: 'Cat', face: "=^.^=", food: "a fish", color: '#F4A340', accent: '#7BD88F', accentChars: 'o-^', says: ['mrrp', 'purr...', 'feed me'], frames: [
     "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~",
     "  /\\_/\\\n ( -.- )\n  > ^ <\n /|   |\\\n(_|   |_) ~",
     "  /\\_/\\\n ( o.o )\n  > ^ <\n /|   |\\\n(_|   |_)~~",
@@ -26,7 +27,7 @@ const ANIMALS: Animal[] = [
     "  ▟▙     ▟▙\n ▐██▙▄▄▄▟██▌\n ▐█●█████●█▌\n  ▜███▼███▛ ▗▖\n   ▟█████▙ ▟▛\n   ▝▀▘ ▝▀▘",
     "  ▟▙     ▟▙\n ▐██▙▄▄▄▟██▌\n ▐█▬█████▬█▌\n  ▜███▼███▛\n   ▟█████▙▄▟▘\n   ▝▀▘ ▝▀▘",
   ] },
-  { name: 'Bunny', food: "a carrot", color: '#F7A8C8', accent: '#FF6B9A', accentChars: 'o-"', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
+  { name: 'Bunny', face: "(='.'=)", food: "a carrot", color: '#F7A8C8', accent: '#FF6B9A', accentChars: 'o-"', says: ['hop', 'carrot pls', '*nose wiggle*'], frames: [
     "   (\\ /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
     "   (\\ /)\n   (-.-)\n  (  ^  )\n  (\")_(\")",
     "   (| /)\n   (o.o)\n  (  ^  )\n  (\")_(\")",
@@ -35,7 +36,7 @@ const ANIMALS: Animal[] = [
     "   ▐▌ ▐▌\n   ▐▌ ▐▌\n  ▗█████▖\n ▐█▬███▬█▌\n  ▜██▼██▛\n  ▟██▀██▙\n  ▝▀▘ ▝▀▘",
     " ▄▟▘ ▐▌\n      ▐▌\n  ▗█████▖\n ▐█●███●█▌\n  ▜██▼██▛\n  ▟██▀██▙\n  ▝▀▘ ▝▀▘",
   ] },
-  { name: 'Owl', food: "a berry", color: '#C9A06B', accent: '#FFD166', accentChars: 'O-,', says: ['hoo?', 'whooo', 'night shift'], frames: [
+  { name: 'Owl', face: "{O,O}", food: "a berry", color: '#C9A06B', accent: '#FFD166', accentChars: 'O-,', says: ['hoo?', 'whooo', 'night shift'], frames: [
     "  ,___,\n  (O,O)\n  /)__)\n --\"-\"--",
     "  ,___,\n  (-,O)\n  /)__)\n --\"-\"--",
     "  ,___,\n  (O,O)\n \\(___)/\n --\"-\"--",
@@ -44,7 +45,7 @@ const ANIMALS: Animal[] = [
     "  ▙▄▄▄▄▄▟\n ▐█▬███●█▌\n ▐██▙▼▟██▌\n  ▜█████▛\n   ▀▘ ▝▀",
     "  ▙▄▄▄▄▄▟\n ▐█●███●█▌\n▗▟██▙▼▟██▙▖\n ▝▜█████▛▘\n   ▀▘ ▝▀",
   ] },
-  { name: 'Fish', food: "some flakes", color: '#FF9F1C', accent: '#5BC0EB', accentChars: 'o', says: ['blub', 'blub blub', 'o  o'], frames: [
+  { name: 'Fish', face: "><(((o>", food: "some flakes", color: '#FF9F1C', accent: '#5BC0EB', accentChars: 'o', says: ['blub', 'blub blub', 'o  o'], frames: [
     "      o\n    o\n  ><(((o>\n ~~~~~~~~~~",
     "     o\n   o\n   ><(((o>\n ~~~~~~~~~~",
     "    o\n      o\n  ><(((o>\n ~~~~~~~~~~",
@@ -52,7 +53,7 @@ const ANIMALS: Animal[] = [
     "         o\n     ▗▄▄▄▖\n▙  ▗▟█████▙▖\n███████████●▌\n▛  ▝▜█████▛▘\n     ▝▀▀▀▘",
     "        o\n      ▗▄▄▄▖\n ▙  ▗▟█████▙▖\n ▐██████████●▌\n ▛  ▝▜█████▛▘\n      ▝▀▀▀▘",
   ] },
-  { name: 'Penguin', food: "a sardine", color: '#9CC3E6', accent: '#F7C948', accentChars: 'V^', says: ['noot', 'brr', 'waddle'], frames: [
+  { name: 'Penguin', face: "<(o )___", food: "a sardine", color: '#9CC3E6', accent: '#F7C948', accentChars: 'V^', says: ['noot', 'brr', 'waddle'], frames: [
     "   _~_\n  (o o)\n /  V  \\\n/(  _  )\\\n  ^^ ^^",
     "   _~_\n  (o o)\n /  V  \\\n (  _  )\\\n  ^^ ^^",
     "   _~_\n  (- -)\n /  V  \\\n/(  _  )\n  ^^ ^^",
@@ -60,14 +61,14 @@ const ANIMALS: Animal[] = [
     "  ▗▄▄▄▖\n ▟█████▙\n █●███●█\n ▜██▼██▛\n▗█▀   ▀█▖\n ▜▄▄▄▄▄▛\n  ▀▀ ▀▀",
     "  ▗▄▄▄▖\n ▟█████▙\n █▬███▬█\n ▜██▼██▛\n █▀   ▀█▖\n ▜▄▄▄▄▄▛\n  ▀▀ ▀▀",
   ] },
-  { name: 'Snail', food: "a lettuce leaf", color: '#7BC67E', accent: '#C792EA', accentChars: '@()', says: ['...slowly', 'no rush', '@'], frames: [
+  { name: 'Snail', face: "@_y", food: "a lettuce leaf", color: '#7BC67E', accent: '#C792EA', accentChars: '@()', says: ['...slowly', 'no rush', '@'], frames: [
     "    _____\n   /     \\  @ @\n  | (@)   |_/ /\n   \\_____/___/",
     "    _____\n   /     \\ @ @\n  | (@)   |/ /\n   \\_____/__/",
   ], bricks: [
     "  ▗▄▄▄▄▖\n ▟█▀▀▀▀█▙  ● ●\n▐█ ▗▄▖ ▐█▌ ▐ ▐\n▐█ ▝▀█ ▐█▌▗▟▄▛\n ▜▙▄▄▄▟███▛▘",
     "  ▗▄▄▄▄▖\n ▟█▀▀▀▀█▙ ● ●\n▐█ ▗▄▖ ▐█▌▐ ▐\n▐█ ▝▀█ ▐█▙▟▄▛\n ▜▙▄▄▄▟███▛▘",
   ] },
-  { name: "Dog", food: "a bone", color: "#D9A066", accent: "#FF6B6B", accentChars: "@OU", says: ["woof!", "ball?", "best day", "*wags tail*"], frames: [
+  { name: "Dog", face: "U^o^U", food: "a bone", color: "#D9A066", accent: "#FF6B6B", accentChars: "@OU", says: ["woof!", "ball?", "best day", "*wags tail*"], frames: [
     "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/   U",
     "  / \\__\n (    @\\___\n /         O\n/   (_____/\n/_____/",
   ], bricks: [
@@ -75,7 +76,7 @@ const ANIMALS: Animal[] = [
     "   ▗▄▄▄▄▄▖\n▗▟█▛█████▜█▙▖\n▐██▌█▬███▬█▐██▌\n▝▜▛▐███▼███▌▜▛▘\n    ▜██▄██▛\n   ▗▟█████▙▖▄▄▄▖\n   ▝▀▘   ▝▀▘",
     "   ▗▄▄▄▄▄▖\n▗▟█▛█████▜█▙▖\n▐██▌█●███●█▐██▌\n▝▜▛▐███▼███▌▜▛▘\n    ▜█▙o▟█▛    ▗▖\n   ▗▟█████▙▖ ▗▟▘\n   ▝▀▘   ▝▀▘▀▀",
   ] },
-  { name: "Frog", food: "a fly", color: "#6BCB77", accent: "#FFD93D", accentChars: "@", says: ["ribbit", "croak", "*catches fly*"], frames: [
+  { name: "Frog", face: "(@..@)", food: "a fly", color: "#6BCB77", accent: "#FFD93D", accentChars: "@", says: ["ribbit", "croak", "*catches fly*"], frames: [
     "  @..@\n (----)\n( >__< )\n^^ ~~ ^^",
     "  -..@\n (----)\n( >__< )\n^^ ~~ ^^",
     "  @..@\n (----)\n( >__< )\n ^^  ^^",
@@ -84,14 +85,14 @@ const ANIMALS: Animal[] = [
     " ▗▟▙▖   ▗▟▙▖\n █▬██▄▄▄██●█\n ▜█████████▛\n  ▜▙▄▄▄▄▄▟▛\n▗▟▛▘     ▝▜▙▖",
     " ▗▟▙▖   ▗▟▙▖\n █●██▄▄▄██●█\n ▜█████████▛\n  ▜▙▄▄▄▄▄▟▛\n ▝▜▙     ▟▛▘",
   ] },
-  { name: "Turtle", food: "a strawberry", color: "#4CAF8F", accent: "#F4D35E", accentChars: "o", says: ["slow and steady", "*hides*", "hello"], frames: [
+  { name: "Turtle", face: "(o|___|)", food: "a strawberry", color: "#4CAF8F", accent: "#F4D35E", accentChars: "o", says: ["slow and steady", "*hides*", "hello"], frames: [
     "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n   UU    UU",
     "    ______\n  _/ \\__/ \\_ _\n / \\__/  \\__\\o)\n \\__________/\n    UU    UU",
   ], bricks: [
     "   ▗▄▄▄▄▄▄▖\n ▗▟█▛▀██▀▜█▙▖ ▗▄▄▖\n▐██▙▄██▄▟███▌▐█●█▌\n ▜██████████▛▀▜█▛\n   ▜▛    ▜▛",
     "   ▗▄▄▄▄▄▄▖\n ▗▟█▛▀██▀▜█▙▖ ▗▄▄▖\n▐██▙▄██▄▟███▌▐█●█▌\n ▜██████████▛▀▜█▛\n    ▜▛    ▜▛",
   ] },
-  { name: "Mouse", food: "some cheese", color: "#B8B8C8", accent: "#FF8FAB", accentChars: "o~", says: ["squeak", "cheese?", "*twitch*"], frames: [
+  { name: "Mouse", face: "<:3 )~", food: "some cheese", color: "#B8B8C8", accent: "#FF8FAB", accentChars: "o~", says: ["squeak", "cheese?", "*twitch*"], frames: [
     "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~~~\n   \" \"",
     "  _   _\n (_)-(_)\n  (-.-)\n  (=-=) ~~\n   \" \"",
     "  _   _\n (_)-(_)\n  (o.o)\n  (=-=)~ ~\n   \" \"",
@@ -99,14 +100,14 @@ const ANIMALS: Animal[] = [
     "▗██▖    ▗██▖\n▐███▙▄▄▟███▌\n ▝▜●████●▛▘\n   ▜██▼██▛ ▗▖\n    ▝▀▀▀▘▀▀▘",
     "▗██▖    ▗██▖\n▐███▙▄▄▟███▌\n ▝▜▬████▬▛▘\n   ▜██▼██▛\n    ▝▀▀▀▘▄▄▄▖",
   ] },
-  { name: "Bear", food: "a pot of honey", color: "#C08A5B", accent: "#FFCF99", accentChars: "o", says: ["grr (friendly)", "honey?", "*big hug*"], frames: [
+  { name: "Bear", face: "(o^.^o)", food: "a pot of honey", color: "#C08A5B", accent: "#FFCF99", accentChars: "o", says: ["grr (friendly)", "honey?", "*big hug*"], frames: [
     "  (()__(()\n  /  o  o \\\n (    __   )\n  \\  (__) /\n   '-....-'",
     "  (()__(()\n  /  -  - \\\n (    __   )\n  \\  (__) /\n   '-....-'",
   ], bricks: [
     "▗▟▙▖     ▗▟▙▖\n▝██▙▄▄▄▄▄▟██▘\n ▐██●███●██▌\n ▐███▗▼▖███▌\n ▐██▙▝▀▘▟██▌\n  ▜███████▛\n   ▝▀▀▀▀▀▘",
     "▗▟▙▖     ▗▟▙▖\n▝██▙▄▄▄▄▄▟██▘\n ▐██▬███▬██▌\n ▐███▗▼▖███▌\n ▐██▙▝▀▘▟██▌\n  ▜███████▛\n   ▝▀▀▀▀▀▘",
   ] },
-  { name: "Bat", food: "a mango", color: "#A78BFA", accent: "#FFD166", accentChars: "o.", says: ["eek", "squeak", "upside down"], frames: [
+  { name: "Bat", face: "^v(o.o)v^", food: "a mango", color: "#A78BFA", accent: "#FFD166", accentChars: "o.", says: ["eek", "squeak", "upside down"], frames: [
     "   /\\       /\\\n  /  \\(\\_/)/  \\\n / /\\ (o.o) /\\ \\\n/_/  \\/ \" \\/  \\_\\",
     "\n  __  (\\_/)  __\n /  \\_(o.o)_/  \\\n \\_/  / \" \\  \\_/",
   ], bricks: [
@@ -138,6 +139,7 @@ const act = atom({ plugin: 'ascii-menagerie', key: 'act' } as const, null as Act
 const love = atom({ plugin: 'ascii-menagerie', key: 'love' } as const, 3)
 const isAsleep = atom({ plugin: 'ascii-menagerie', key: 'isAsleep' } as const, false)
 const isBricks = atom({ plugin: 'ascii-menagerie', key: 'isBricks' } as const, true)
+const isMini = atom({ plugin: 'ascii-menagerie', key: 'isMini' } as const, true)
 
 const HEART = '#FF6B9A'
 const MAX_LOVE = 5
@@ -339,6 +341,24 @@ export const register: Register = on => {
     const v = await view($)
     const hearts = '♥'.repeat(v.love) + '♡'.repeat(MAX_LOVE - v.love)
 
+    // Small by default: one line, so it covers as little of the chat as possible.
+    if (await read($, isMini)) {
+      const face = v.asleep ? v.a.face.replace(/[oO@]/g, '-') : v.a.face
+      const doing = v.top.trim()
+      return (
+        <Box flexDirection="row" gap={1} alignItems="center" flexWrap="wrap" backgroundColor="transparent">
+          <Text mono weight="bold" color={v.a.color}>{face}</Text>
+          {doing ? <Text mono color={v.topColor}>{doing}</Text> : null}
+          <Text color={HEART}>{hearts}</Text>
+          <Text color={v.line.includes('♥') ? HEART : v.a.accent}>{v.line ? `"${v.line}"` : ''}</Text>
+          <Button key="mini-pet" label="Pet" onPress={() => pet($)} />
+          <Button key="mini-feed" label="Feed" onPress={() => feed($)} />
+          <Button key="mini-next" label="Next" onPress={() => nextAnimal($, false)} />
+          <Button key="mini-big" label="Bigger" onPress={() => update($, isMini, () => false)} />
+        </Box>
+      )
+    }
+
     return (
       <Box flexDirection="row" gap={2} alignItems="center" backgroundColor="transparent">
         <Box flexDirection="column">
@@ -363,6 +383,7 @@ export const register: Register = on => {
             <Button key="band-next" label="Next" onPress={() => nextAnimal($, false)} />
             <Button key="band-random" label="Surprise me" onPress={() => nextAnimal($, true)} />
             <Button key="band-look" label={v.bricks ? 'Classic look' : 'Brick look'} onPress={() => toggleLook($)} />
+            <Button key="band-small" label="Smaller" onPress={() => update($, isMini, () => true)} />
           </Box>
         </Box>
       </Box>

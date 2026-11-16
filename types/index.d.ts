@@ -11,6 +11,7 @@ declare module 'claude-code' {
       love: number
       isAsleep: boolean
       isBricks: boolean
+      isMini: boolean
     }
   }
 }

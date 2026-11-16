@@ -10,6 +10,7 @@ What you can do with the animal:
 - **Play**: it hops from side to side.
 - **Sleep / Wake up**: it closes its eyes and snores until you wake it.
 - **Next** and **Surprise me**: switch to the next animal or a random one.
+- **Smaller / Bigger**: by default the animal sits on one short line so it covers little of the chat; press Bigger for the full drawing.
 - **Brick look / Classic look**: switch between animals built from toy bricks (the default) and classic keyboard-character art.
 
 A love meter (five hearts) fills when you pet, feed or play, and slowly empties if you leave the
