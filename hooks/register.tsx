@@ -273,7 +273,7 @@ export const register: Register = on => {
   })
 
   on('command.run', { command: 'menagerie' }, async $ => {
-    await $.ui.open({ id: PANE, title: TITLE })
+    await $.ui.open({ id: PANE, title: TITLE, backgroundColor: 'transparent' })
     return { text: 'ASCII Menagerie opened.' }
   })
 
@@ -304,7 +304,7 @@ export const register: Register = on => {
     const hearts = '♥'.repeat(v.love) + '♡'.repeat(MAX_LOVE - v.love)
 
     return (
-      <Box flexDirection="column" gap={1}>
+      <Box flexDirection="column" gap={1} backgroundColor="transparent">
         <Box flexDirection="row" gap={1}>
           <Text weight="bold" color={v.a.color}>{v.a.name}</Text>
           <Text color={HEART}>{hearts}</Text>
@@ -340,7 +340,7 @@ export const register: Register = on => {
     const hearts = '♥'.repeat(v.love) + '♡'.repeat(MAX_LOVE - v.love)
 
     return (
-      <Box flexDirection="row" gap={2} alignItems="center">
+      <Box flexDirection="row" gap={2} alignItems="center" backgroundColor="transparent">
         <Box flexDirection="column">
           <Text mono color={v.topColor}>{v.top}</Text>
           {v.lines.map(l => (
