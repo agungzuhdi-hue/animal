@@ -12,6 +12,7 @@ declare module 'claude-code' {
       isAsleep: boolean
       isBricks: boolean
       isMini: boolean
+      isHidden: boolean
     }
   }
 }

@@ -11,13 +11,14 @@ What you can do with the animal:
 - **Sleep / Wake up**: it closes its eyes and snores until you wake it.
 - **Next** and **Surprise me**: switch to the next animal or a random one.
 - **Smaller / Bigger**: by default the animal sits on one short line so it covers little of the chat; press Bigger for the full drawing.
+- **Hide**: takes the animal away completely; type `/menagerie` to bring it back.
 - **Brick look / Classic look**: switch between animals built from toy bricks (the default) and classic keyboard-character art.
 
 A love meter (five hearts) fills when you pet, feed or play, and slowly empties if you leave the
 animal alone. The animal also reacts while Claude works: it notices a new prompt, watches each
 tool call, and cheers when the turn finishes (unless it is asleep).
 
-Run `/menagerie` to also show it in a side pane.
+Run `/menagerie-pane` to also show it in a side pane.
 
 
 ## Install

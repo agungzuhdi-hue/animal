@@ -140,6 +140,7 @@ const love = atom({ plugin: 'ascii-menagerie', key: 'love' } as const, 3)
 const isAsleep = atom({ plugin: 'ascii-menagerie', key: 'isAsleep' } as const, false)
 const isBricks = atom({ plugin: 'ascii-menagerie', key: 'isBricks' } as const, true)
 const isMini = atom({ plugin: 'ascii-menagerie', key: 'isMini' } as const, true)
+const isHidden = atom({ plugin: 'ascii-menagerie', key: 'isHidden' } as const, false)
 
 const HEART = '#FF6B9A'
 const MAX_LOVE = 5
@@ -263,7 +264,8 @@ async function view($: EngineInterface): Promise<View> {
 
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
-    await $.command.register({ name: 'menagerie', description: 'Also show the ASCII Menagerie in a side pane' })
+    await $.command.register({ name: 'menagerie', description: 'Show the ASCII Menagerie animal again after hiding it' })
+    await $.command.register({ name: 'menagerie-pane', description: 'Show the ASCII Menagerie in a side pane' })
     $.clock.every(600, () => {
       void update($, frame, n => (n + 1) % 1000)
     })
@@ -275,8 +277,14 @@ export const register: Register = on => {
   })
 
   on('command.run', { command: 'menagerie' }, async $ => {
+    await update($, isHidden, () => false)
+    await say($, "I'm back!", 2500)
+    return { text: 'ASCII Menagerie is showing again.' }
+  })
+
+  on('command.run', { command: 'menagerie-pane' }, async $ => {
     await $.ui.open({ id: PANE, title: TITLE, backgroundColor: 'transparent' })
-    return { text: 'ASCII Menagerie opened.' }
+    return { text: 'ASCII Menagerie pane opened.' }
   })
 
   on('prompt.submit', async ($, e, next) => {
@@ -336,10 +344,11 @@ export const register: Register = on => {
   })
 
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
-    if (e.props.hasSurvey) return next(e)
+    if (e.props.hasSurvey || (await read($, isHidden))) return next(e)
     const { Box, Text, Button } = $.ui.resolve(e)
     const v = await view($)
     const hearts = '♥'.repeat(v.love) + '♡'.repeat(MAX_LOVE - v.love)
+    const hide = () => update($, isHidden, () => true)
 
     // Small by default: one line, so it covers as little of the chat as possible.
     if (await read($, isMini)) {
@@ -355,6 +364,7 @@ export const register: Register = on => {
           <Button key="mini-feed" label="Feed" onPress={() => feed($)} />
           <Button key="mini-next" label="Next" onPress={() => nextAnimal($, false)} />
           <Button key="mini-big" label="Bigger" onPress={() => update($, isMini, () => false)} />
+          <Button key="mini-hide" label="Hide" onPress={hide} />
         </Box>
       )
     }
@@ -384,6 +394,7 @@ export const register: Register = on => {
             <Button key="band-random" label="Surprise me" onPress={() => nextAnimal($, true)} />
             <Button key="band-look" label={v.bricks ? 'Classic look' : 'Brick look'} onPress={() => toggleLook($)} />
             <Button key="band-small" label="Smaller" onPress={() => update($, isMini, () => true)} />
+            <Button key="band-hide" label="Hide" onPress={hide} />
           </Box>
         </Box>
       </Box>
